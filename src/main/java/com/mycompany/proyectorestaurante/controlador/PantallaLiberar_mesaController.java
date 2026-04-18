@@ -36,13 +36,32 @@ public class PantallaLiberar_mesaController implements Initializable {
     }  
     @FXML
     private void liberarMesa(){
+       try{ 
         int numeroMesa = Integer.parseInt(txtMesa.getText());
-        boolean resultado = mesaDAO.liberarMesa(numeroMesa);
-        if(resultado){
-            lblMensaje.setText("La mesa se liberó correctamente");
-        }else{
-            lblMensaje.setText("No se pudo liberar la mesa");
+
+        String resultado = mesaDAO.liberarMesa(numeroMesa);
+
+        switch (resultado) {
+            case "OK":
+                lblMensaje.setText("Mesa liberada");
+                break;
+            case "YA_LIBRE":
+                lblMensaje.setText("la mesa ya estaba disponible");
+                break;
+            case "NO_PAGADA":
+                lblMensaje.setText("No se puede liberar: cuenta no pagada");
+                break;
+            case "NO_EXISTE":
+                lblMensaje.setText("La mesa no existe");
+                break;
+            default:
+                lblMensaje.setText("Error al liberar la mesa");
+                break;
         }
+    }catch(NumberFormatException e){
+        lblMensaje.setText("solo se permiten numeros");
+        txtMesa.clear();
+}
     }
     @FXML
     private void cancelar(){

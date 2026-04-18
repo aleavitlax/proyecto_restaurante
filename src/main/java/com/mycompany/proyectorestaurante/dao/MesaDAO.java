@@ -16,36 +16,43 @@ public class MesaDAO {
 
     Connection conn = ConexionBD.conectar();
 
-    public boolean liberarMesa(int numeroMesa) {
-        try {
-            PreparedStatement ps = conn.prepareStatement(
-                "SELECT estado FROM mesas WHERE capacidad = ?"
-            );
-            ps.setInt(1, numeroMesa);
+   public String liberarMesa(int numeroMesa) {
+    try {
+        PreparedStatement ps = conn.prepareStatement(
+            "SELECT estado, pagada FROM mesas WHERE capacidad = ?"
+        );
+        ps.setInt(1, numeroMesa);
 
-            ResultSet rs = ps.executeQuery();
+        ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
-                String estado = rs.getString("estado");
+        if (rs.next()) {
+            String estado = rs.getString("estado");
+            boolean pagada = rs.getBoolean("pagada");
 
-                if (estado.equals("ocupada")) {
-                    PreparedStatement update = conn.prepareStatement(
-                        "UPDATE mesas SET estado = 'disponible' WHERE capacidad = ?"
-                    );
-                    update.setInt(1, numeroMesa);
-                    update.executeUpdate();
-
-                    return true; 
-                } else {
-                    return false;
-                }
+            if (estado.equals("disponible")) {
+                return "YA_LIBRE";
             }
 
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            if (!pagada) {
+                return "NO_PAGADA";
+            }
+
+          
+            PreparedStatement update = conn.prepareStatement(
+                "UPDATE mesas SET estado = 'disponible' WHERE capacidad = ?"
+            );
+            update.setInt(1, numeroMesa);
+            update.executeUpdate();
+
+            return "OK";
+        } else {
+            return "NO_EXISTE";
         }
 
-        return false;
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+        return "ERROR";
     }
+}
 }
 
