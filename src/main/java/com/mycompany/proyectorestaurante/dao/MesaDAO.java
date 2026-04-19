@@ -33,7 +33,7 @@ public class MesaDAO {
                 return "YA_LIBRE";
             }
 
-            if (!pagada) {
+            if (!pagada){
                 return "NO_PAGADA";
             }
 
