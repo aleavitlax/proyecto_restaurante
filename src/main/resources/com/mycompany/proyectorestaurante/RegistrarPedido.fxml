@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="382.0" style="-fx-background-color: #1B4D56;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectorestaurante.RegistrarPedidoController">
+   <children>
+      <Label layoutX="114.0" layoutY="14.0" text="Restaurante" textAlignment="CENTER" textFill="#efefe8">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="218.0" layoutY="53.0" text="TAL" textAlignment="CENTER" textFill="#efefe8">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="184.0" fitWidth="93.0" layoutX="14.0" layoutY="7.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/background-remover-1775832452403.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutY="125.0" prefHeight="370.0" prefWidth="382.0" style="-fx-background-color: #f5efe6; -fx-background-radius: 10;">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="59.0" prefWidth="382.0">
+               <children>
+                  <Label text="Resumen del pedido" />
+               </children>
+            </HBox>
+            <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+            <HBox alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="382.0">
+               <children>
+                  <Label text="Total acomulado" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 20; -fx-padding: 10 20;" text="Agregar Producto" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 20; -fx-padding: 10 20;" text="Terminar Pedido" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>
