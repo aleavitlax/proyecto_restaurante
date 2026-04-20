@@ -54,5 +54,17 @@ public class MesaDAO {
         return "ERROR";
     }
 }
+   
+   public ResultSet obtenerMesasDisponibles(){
+       try{
+           PreparedStatement ps = conn.prepareStatement("SELECT * FROM mesas WHERE "
+                   + "estado = 'disponible'");
+           return ps.executeQuery();
+           
+       }catch (Exception e){
+           System.out.println("ERROR:"+ e.getMessage());
+           return null;
+       }
+   }
 }
 
