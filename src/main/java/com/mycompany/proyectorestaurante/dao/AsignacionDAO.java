@@ -17,7 +17,7 @@ public class AsignacionDAO {
         try{
             
             PreparedStatement ps = conn.prepareStatement("INSERT INTO asignaciones (id_mesa, nombre_cliente, estado) "
-                    + "VALUES (?, ?, disponible)");
+                    + "VALUES (?, ?, 'disponible')");
             ps.setInt(1, idMesa);
             ps.setString(2, cliente);
             ps.executeUpdate();

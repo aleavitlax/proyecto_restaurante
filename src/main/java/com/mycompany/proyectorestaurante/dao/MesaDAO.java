@@ -4,7 +4,10 @@
  */
 package com.mycompany.proyectorestaurante.dao;
 import com.mycompany.proyectorestaurante.bd.ConexionBD;
+import com.mycompany.proyectorestaurante.modelo.Mesa;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Alejandra
@@ -55,16 +58,28 @@ public class MesaDAO {
     }
 }
    
-   public ResultSet obtenerMesasDisponibles(){
+   public List<Mesa> obtenerMesasDisponibles(){
+       List<Mesa>lista = new ArrayList<>();
        try{
+           
            PreparedStatement ps = conn.prepareStatement("SELECT * FROM mesas WHERE "
                    + "estado = 'disponible'");
-           return ps.executeQuery();
+           ResultSet rs = ps.executeQuery();
+           
+           while(rs.next()){
+               Mesa m = new Mesa();
+               m.setId(rs.getInt("id"));
+               m.setCapacidad(rs.getInt("capacidad"));
+               m.setEstado(rs.getString("estado"));
+               
+               lista.add(m);
+           }
            
        }catch (Exception e){
            System.out.println("ERROR:"+ e.getMessage());
            return null;
        }
+       return lista;
    }
 }
 
