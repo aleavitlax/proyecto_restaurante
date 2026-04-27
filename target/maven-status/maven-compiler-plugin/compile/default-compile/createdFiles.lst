@@ -2,10 +2,11 @@ com\mycompany\proyectorestaurante\controlador\PantallaAsignar_mesaController.cla
 com\mycompany\proyectorestaurante\dao\AsignacionDAO.class
 com\mycompany\proyectorestaurante\PantallaClienteController.class
 com\mycompany\proyectorestaurante\modelo\Mesa.class
+com\mycompany\proyectorestaurante\controlador\RegistrarPedidoController.class
 com\mycompany\proyectorestaurante\App.class
 com\mycompany\proyectorestaurante\modelo\Asignacion.class
 com\mycompany\proyectorestaurante\dao\MesaDAO.class
-com\mycompany\proyectorestaurante\RegistrarPedidoController.class
 com\mycompany\proyectorestaurante\controlador\PantallaLiberar_mesaController.class
 com\mycompany\proyectorestaurante\controlador\PantallaLoginController.class
 com\mycompany\proyectorestaurante\bd\ConexionBD.class
+com\mycompany\proyectorestaurante\modelo\ProductoPedido.class
