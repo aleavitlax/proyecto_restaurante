@@ -10,7 +10,7 @@ import java.sql.*;
  */
 public class ConexionBD {
     
-    private static final String URL = "jdbc:mysql://localhost:3306/bd_Restaurante";
+    private static final String URL = "jdbc:mysql://localhost:3306/bd_restaurante";
     private static final String USER = "restaurante";
     private static final String PASSWORD = "admin123";
     

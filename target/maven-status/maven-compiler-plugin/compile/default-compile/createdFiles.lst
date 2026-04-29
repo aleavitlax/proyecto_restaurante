@@ -7,6 +7,7 @@ com\mycompany\proyectorestaurante\App.class
 com\mycompany\proyectorestaurante\modelo\Asignacion.class
 com\mycompany\proyectorestaurante\dao\MesaDAO.class
 com\mycompany\proyectorestaurante\controlador\PantallaLiberar_mesaController.class
+com\mycompany\proyectorestaurante\controlador\GestorNavegacion.class
 com\mycompany\proyectorestaurante\controlador\PantallaLoginController.class
 com\mycompany\proyectorestaurante\bd\ConexionBD.class
 com\mycompany\proyectorestaurante\modelo\ProductoPedido.class
